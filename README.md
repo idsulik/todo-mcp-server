@@ -37,16 +37,6 @@ cd todo-mcp-server
 uv pip install -e .
 ```
 
-## Running the Server
-
-To start the MCP server:
-
-```bash
-python server.py
-```
-
-By default, the server will start on `localhost:8000`.
-
 ### Adding to MCP Servers List
 
 To add this server to your MCP servers list, use the following command:
@@ -126,6 +116,28 @@ Desktop configuration file (typically located at `~/.claude-desktop/claude_deskt
 
 Replace `/path/to/your/server.py` with the absolute path to your server.py file. Make sure to use absolute paths, not
 relative paths.
+
+### Using Docker
+
+You can also run this MCP server using Docker without installing anything locally. Add the following to your Claude Desktop configuration:
+
+```json
+{
+  "mcpServers": {
+    "todo": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "idsulik/todo-mcp-server"
+      ]
+    }
+  }
+}
+```
+
+The Docker image will automatically pull from Docker Hub if it's not already on your system.
 
 ## Contributing
 
