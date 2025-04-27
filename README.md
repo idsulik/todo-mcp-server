@@ -12,6 +12,7 @@ This repository contains a minimal Todo application implemented as an MCP server
 - Add new todo items
 - Remove todo items
 - Clear all todo items
+- Create structured todo tasks with metadata
 
 This project serves as a test bed for interacting with Model Context Protocol servers and understanding how to build and
 expose functionality through the MCP protocol. For more information about the Model Context Protocol,
@@ -74,6 +75,19 @@ GET todo://view/{item_idx}
 ```
 
 Where `item_idx` is the index of the item you want to view.
+
+### Prompts
+
+1. Create a structured todo task:
+
+```python
+create_task(task_name: str, priority: str = "medium", due_date: str = "")
+```
+
+This prompt helps format todo tasks with priority levels and due dates. Parameters:
+- `task_name`: The name/description of the task
+- `priority`: Task priority (low, medium, high)
+- `due_date`: When the task is due (optional)
 
 ### Tools
 

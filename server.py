@@ -23,6 +23,29 @@ def view_todo(item_idx: int):
         return "Item not found"
     return items[item_idx]
 
+@mcp.prompt("create_task")
+def create_task(task_name: str, priority: str = "medium", due_date: str = ""):
+    """
+    Create a structured todo task with metadata.
+    
+    Args:
+        task_name: The name/description of the task
+        priority: Task priority (low, medium, high)
+        due_date: When the task is due (optional)
+    """
+    formatted_task = f"[{priority.upper()}]"
+    
+    if due_date:
+        formatted_task += f" Due: {due_date} - "
+    else:
+        formatted_task += " - "
+        
+    formatted_task += task_name
+    
+    return {
+        "content": f"I'd like to add a new todo item with the following details:\n\nTask: {task_name}\nPriority: {priority}\nDue date: {due_date or 'None'}\n\nFormatted as: {formatted_task}",
+        "task_string": formatted_task
+    }
 
 @mcp.tool()
 def add_todo(value: str):
