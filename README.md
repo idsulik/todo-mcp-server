@@ -19,7 +19,7 @@ visit [modelcontextprotocol.io](http://modelcontextprotocol.io/).
 
 ## Requirements
 
-- Python 3.11+
+- Python 3.10+
 - uv (Python package installer)
 
 ## Installation
