@@ -7,6 +7,6 @@ COPY pyproject.toml uv.lock ./
 
 RUN uv sync --frozen
 
-COPY *.py ./
+COPY server.py ./
 
-CMD ["uv", "run", "main.py"] 
+CMD ["uv", "run", "server.py"] 

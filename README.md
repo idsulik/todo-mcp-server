@@ -107,6 +107,11 @@ Desktop configuration file (typically located at `~/.claude-desktop/claude_deskt
     "todo": {
       "command": "uv",
       "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
         "/path/to/your/server.py"
       ]
     }
