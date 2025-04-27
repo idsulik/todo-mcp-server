@@ -4,10 +4,10 @@ FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 WORKDIR /app
 
 COPY pyproject.toml ./
+COPY uv.lock ./
 
-RUN uv pip install --system "mcp[cli]>=1.6.0"
+RUN uv sync --frozen
 
-COPY main.py ./
-COPY server.py ./
+COPY *.py ./
 
 CMD ["uv", "run", "main.py"] 

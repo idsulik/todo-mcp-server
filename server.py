@@ -55,5 +55,3 @@ def clear_todo():
 
     items.clear()
     return "Cleared all TODO items"
-
-mcp.run()
